@@ -7,7 +7,6 @@ public class GamblingSimulator {
 	public static final int bet = 1;
 	public static int Win = 0;
 	public static int Loose = 0;
-	public static int TempStack = 50;
 	public static int Total_Amount = 0;
 
 	public void checkWinningLoose() {
@@ -46,11 +45,11 @@ public class GamblingSimulator {
 	public void TotalAmountWinorLoss(int day) {
 		for (int index = 0; index <= day; index++) {
 			int temp = WinningLooseRange();
-			if (temp - stack > 0) {
-				Total_Amount = Total_Amount + (TempStack - stack);
+			if (temp - stack > 50) {
+				Total_Amount = Total_Amount + (temp - stack);
 				System.out.println("winnning day " + index + "Amount is" + Total_Amount);
 			} else {
-				Total_Amount = Total_Amount + (stack - TempStack);
+				Total_Amount = Total_Amount + (stack - temp);
 				System.out.println("loosing days" + index + "Amount is " + Total_Amount);
 			}
 		}
